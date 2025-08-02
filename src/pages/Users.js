@@ -5,7 +5,7 @@
 //   const [users, setUsers] = useState([]);
 
 //   useEffect(() => {
-//     API.get("http://localhost:5000/api/users")
+//     API.get("https://node-backend-hsr7.onrender.com/api/users")
 //       .then((response) => setUsers(response.data))
 //       .catch((error) => console.error(error));
 //   }, []);
@@ -103,7 +103,7 @@ const Users = () => {
       setLoading(true)
       setError(null)
 
-      let url = "http://localhost:5000/api/users"
+      let url = "https://node-backend-hsr7.onrender.com/api/users"
       const params = new URLSearchParams()
 
       if (newUsers) {
@@ -166,7 +166,7 @@ const Users = () => {
       setError(null)
       setIsSearchMode(true)
 
-      const response = await API.get(`http://localhost:5000/api/users/findbyemail/${encodeURIComponent(email)}`)
+      const response = await API.get(`https://node-backend-hsr7.onrender.com/api/users/findbyemail/${encodeURIComponent(email)}`)
 
       // API might return a single user object or an array
       const userData = Array.isArray(response.data) ? response.data : [response.data]
